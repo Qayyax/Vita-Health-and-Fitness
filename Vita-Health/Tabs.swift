@@ -17,8 +17,6 @@ struct Tabs: View {
   ]
   var body: some View {
     ZStack {
-      Color.red
-      .ignoresSafeArea()
       VStack {
         TabView (selection: $activeTab) {
           Home()
@@ -42,20 +40,25 @@ struct Tabs: View {
      
       VStack {
         Spacer()
-        HStack(alignment: .center) {
+        HStack(alignment: .center, spacing: 40) {
           ForEach(tabs, id: \.title) { tab in
             Button(action: {
               self.activeTab = tab.title;
-              let color = Color(red:0.9490196078431372, green: 0.9568627450980393, blue: 0.9686274509803922 );
-              print("\(color)")
             }) {
-              Image(systemName: tab.icon)
-                .font(.system(size: 40))
-                .foregroundColor(self.activeTab == tab.title ? .blue : .gray)
+              VStack {
+                Image(systemName: tab.icon)
+                  .font(.system(size: 20))
+                Text(tab.title)
+                  .font(.caption)
+              }
+              .foregroundColor(self.activeTab == tab.title ? .blue : .gray)
             }
           }
         }
+        .padding(20)
         .frame(width: .infinity, height: 50)
+        .border(Color.gray, width: 1)
+        .cornerRadius(25)
       }
       
     }
