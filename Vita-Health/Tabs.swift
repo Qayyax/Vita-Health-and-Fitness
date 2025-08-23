@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct Tabs: View {
-  @State private var activeTab = "home"
+  @State private var activeTab = "Home"
   private var tabs: [TabDetails] = [
     TabDetails(title: "Home", icon: "house"),
     TabDetails(title: "Explore", icon: "squareshape.split.2x2"),
-    TabDetails(title: "VitAi", icon: "sparkles.2"),
+    TabDetails(title: "VitAi", icon: "sparkles"),
     TabDetails(title: "Profile", icon: "person")
   ]
   var body: some View {
@@ -36,6 +36,24 @@ struct Tabs: View {
             .toolbar(.hidden, for: .tabBar)
         }
       }
+      .border(Color.gray, width: 1)
+     
+      VStack {
+        Spacer()
+        HStack(alignment: .center) {
+          ForEach(tabs, id: \.title) { tab in
+            Button(action: {
+              self.activeTab = tab.title
+            }) {
+              Image(systemName: tab.icon)
+                .font(.system(size: 40))
+                .foregroundColor(self.activeTab == tab.title ? .blue : .gray)
+            }
+          }
+        }
+        .frame(width: .infinity, height: 50)
+      }
+      
     }
   }
 }
