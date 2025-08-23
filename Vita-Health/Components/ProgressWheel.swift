@@ -25,11 +25,10 @@ struct ProgressWheel: View {
         .animation(.linear, value: progress)
         .frame(width: 250)
 
-      VStack {
+      VStack(spacing: 4) {
         Text("Complete")
           .fontWeight(.semibold)
           .foregroundStyle(AppTheme.gray)
-          .padding(.bottom, 4)
         Text("\(Int(progress * 100))%")
           .font(.system(size: 46, weight: .bold))
           .foregroundStyle(AppTheme.dark)
