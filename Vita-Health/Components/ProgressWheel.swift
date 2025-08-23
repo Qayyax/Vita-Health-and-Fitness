@@ -14,7 +14,7 @@ struct ProgressWheel: View {
       Circle()
         .stroke(lineWidth: 40)
         .opacity(0.3)
-        .foregroundColor(AppTheme.gray)
+        .foregroundColor(AppTheme.offBlue)
         .frame(width: 250)
       
       Circle()
