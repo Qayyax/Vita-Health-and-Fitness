@@ -51,7 +51,7 @@ struct Tabs: View {
                 Text(tab.title)
                   .font(.caption)
               }
-              .foregroundColor(self.activeTab == tab.title ? .blue : .gray)
+              .foregroundColor(self.activeTab == tab.title ? Color.custom("D8EFD3") : Color.custom("212121"))
             }
           }
         }
