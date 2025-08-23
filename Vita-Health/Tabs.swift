@@ -19,7 +19,21 @@ struct Tabs: View {
     ZStack {
       VStack {
         TabView (selection: $activeTab) {
+          Home()
+            .tag("Home")
+            .toolbar(.hidden, for: .tabBar)
           
+          Explore()
+            .tag("Explore")
+            .toolbar(.hidden, for: .tabBar)
+          
+          VitAi()
+            .tag("VitAi")
+            .toolbar(.hidden, for: .tabBar)
+          
+          Profile()
+            .tag("Profile")
+            .toolbar(.hidden, for: .tabBar)
         }
       }
     }
