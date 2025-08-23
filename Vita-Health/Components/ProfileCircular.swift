@@ -13,7 +13,7 @@ struct ProfileCircular: View {
         .font(.system(size: 50))
         .padding()
         .background(in: Circle())
-        .backgroundStyle(Color.yellow)
+        .backgroundStyle(AppTheme.secondaryGreen)
     }
 }
 
