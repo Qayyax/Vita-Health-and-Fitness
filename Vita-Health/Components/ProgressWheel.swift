@@ -22,13 +22,17 @@ struct ProgressWheel: View {
         .stroke(style: StrokeStyle(lineWidth: 40, lineCap: .round))
         .foregroundColor(AppTheme.primaryGreen)
         .rotationEffect(Angle(degrees: -90))
-        .animation(.linear, value: progress) // Animate changes to 'progress'
+        .animation(.linear, value: progress)
         .frame(width: 250)
 
       VStack {
         Text("Complete")
+          .fontWeight(.semibold)
+          .foregroundStyle(AppTheme.gray)
+          .padding(.bottom, 4)
         Text("\(Int(progress * 100))%")
-          .font(.title.bold())
+          .font(.system(size: 46, weight: .bold))
+          .foregroundStyle(AppTheme.dark)
       }
     }
   }
