@@ -13,7 +13,6 @@ struct Home: View {
       AppTheme.offYellow
         .ignoresSafeArea()
       ScrollView {
-        // put this in a green bg
         VStack {
           HStack {
             Text("Good Morning **Gizem!**")
@@ -59,6 +58,7 @@ struct Home: View {
         
         //
       }
+      .border(AppTheme.primaryGreen, width: 2)
     }
   }
 }

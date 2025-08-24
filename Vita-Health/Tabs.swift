@@ -17,7 +17,6 @@ struct Tabs: View {
   ]
   var body: some View {
     ZStack {
-      AppTheme.gray.ignoresSafeArea(edges: .all)
         TabView (selection: $activeTab) {
           Home()
             .tag("Home")
