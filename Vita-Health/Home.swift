@@ -68,7 +68,7 @@ struct Home: View {
             
           }
         }
-        .padding( 20)
+        .padding(20)
         .background(AppTheme.white)
         .clipShape(RoundedRectangle(cornerRadius: 30))
         .padding(.horizontal, 20)
