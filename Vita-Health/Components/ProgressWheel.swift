@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct ProgressWheel: View {
-  let progress: CGFloat = 0.8
+  var progress: CGFloat = 0.8
   var body: some View {
     ZStack {
       Circle()
-        .stroke(lineWidth: 40)
+        .stroke(lineWidth: 20)
         .foregroundColor(AppTheme.offBlue)
-        .frame(width: 250)
+        .frame(width: 150)
       
       Circle()
         .trim(from: 0.0, to: progress)
-        .stroke(style: StrokeStyle(lineWidth: 40, lineCap: .round))
+        .stroke(style: StrokeStyle(lineWidth: 20, lineCap: .round))
         .foregroundColor(AppTheme.primaryGreen)
         .rotationEffect(Angle(degrees: -90))
         .animation(.linear, value: progress)
-        .frame(width: 250)
+        .frame(width: 150)
 
       VStack(spacing: 4) {
         Text("Complete")
