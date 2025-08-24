@@ -23,7 +23,7 @@ struct StatsOverview: View {
           HStack(spacing: 0){
             Text("\(currentValue)\(unit ?? "")")
               .foregroundStyle(AppTheme.dark)
-            Text("/\(goalValue)")
+            Text("/\(goalValue)\(unit ?? "")")
               .foregroundStyle(AppTheme.gray)
           }
         }
