@@ -17,9 +17,7 @@ struct Tabs: View {
   ]
   var body: some View {
     ZStack {
-      AppTheme.offBlue
-      .ignoresSafeArea()
-      VStack {
+      AppTheme.gray.ignoresSafeArea(edges: .all)
         TabView (selection: $activeTab) {
           Home()
             .tag("Home")
@@ -37,7 +35,6 @@ struct Tabs: View {
             .tag("Profile")
             .toolbar(.hidden, for: .tabBar)
         }
-      }
      
       VStack {
         Spacer()
@@ -60,7 +57,6 @@ struct Tabs: View {
         .frame(width: .infinity, height: 50)
         .cornerRadius(25)
       }
-      
     }
   }
 }

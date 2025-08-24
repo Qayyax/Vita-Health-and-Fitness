@@ -10,7 +10,7 @@ import SwiftUI
 struct Home: View {
   var body: some View {
     ZStack {
-      AppTheme.secondaryGreen
+      AppTheme.offYellow
         .ignoresSafeArea()
       ScrollView {
         // put this in a green bg
@@ -32,7 +32,8 @@ struct Home: View {
             
             // For the text
             VStack(alignment: .leading, spacing: 10) {
-              Text("You are doing great today!")
+              Text("You're doing great today!")
+                .font(.headline)
               
               HStack {
                 Text("Chat with VitAi")
@@ -48,6 +49,13 @@ struct Home: View {
             Spacer()
           }
         }
+        .background(AppTheme.secondaryGreen)
+        .clipShape(
+          UnevenRoundedRectangle(cornerRadii: .init(
+            bottomLeading: 50,
+            bottomTrailing: 50,
+          ))
+        )
         
         //
       }
