@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileCircular: View {
     var body: some View {
       Image(systemName: "person")
-        .font(.system(size: 50))
+        .font(.system(size: 20))
         .padding()
         .background(in: Circle())
         .backgroundStyle(AppTheme.secondaryGreen)

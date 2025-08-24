@@ -10,6 +10,12 @@ import SwiftUI
 struct Home: View {
     var body: some View {
       ScrollView {
+        HStack {
+          Text("Good Morning **Gizem!**")
+            .font(.title)
+          Spacer()
+          ProfileCircular()
+        }
       }
     }
 }
