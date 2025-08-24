@@ -13,7 +13,6 @@ struct ProgressWheel: View {
     ZStack {
       Circle()
         .stroke(lineWidth: 40)
-        .opacity(0.3)
         .foregroundColor(AppTheme.offBlue)
         .frame(width: 250)
       
