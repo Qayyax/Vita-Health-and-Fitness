@@ -20,9 +20,9 @@ struct CompleteGoals: View {
     CompletedGoalsType(icon: "bed.double", goalTitle: "Sleep", goalComment: "7 hours of sleep", primaryColor: AppTheme.yellow, secondaryColor: AppTheme.offYellow, completed: 1),
   ]
   var body: some View {
-    VStack {
+    VStack(spacing: 14) {
       ForEach(completedGoals, id: \.self.goalTitle) { goal in
-        HStack {
+        HStack(alignment: .center) {
           Checkbox()
           StatsProgress(icon: goal.icon,
                         goalTitle: goal.goalTitle,
