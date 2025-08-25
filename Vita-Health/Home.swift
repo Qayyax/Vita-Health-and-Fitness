@@ -14,10 +14,10 @@ struct Home: View {
       AppTheme.offWhite
         .ignoresSafeArea()
 
-      VStack {
+      VStack(spacing: 0) {
         VStack {
           HStack {
-            Text(scrollPosition.y >= 0 ? "Good Morning **Gizem!**" : "**Home**")
+            Text(scrollPosition.y >= -90 ? "Good Morning **Gizem!**" : "**Home**")
               .font(.title)
             Spacer()
             ProfileCircular()
@@ -25,23 +25,30 @@ struct Home: View {
           .padding(.horizontal)
           .safeAreaPadding(.top, 50)
 
-          // Vstack for into - would hide
         }
+        .padding(.bottom)
         .background(AppTheme.secondaryGreen)
-        .clipShape(
+        .clipShape( scrollPosition.y <= -90 ?
           UnevenRoundedRectangle(cornerRadii: .init(
             bottomLeading: 50,
             bottomTrailing: 50,
-          ))
+          )) : UnevenRoundedRectangle()
         )
-        .padding(.bottom, 20)
         
         ScrollView {
+          // Vstack for into - would hide
           VStack {
-            if scrollPosition.y >= 0 {
+            if scrollPosition.y >= -90 {
               YouAreDoingGreat()
             }
           }
+          .background(AppTheme.secondaryGreen)
+          .clipShape(
+            UnevenRoundedRectangle(cornerRadii: .init(
+              bottomLeading: 50,
+              bottomTrailing: 50,
+            ))
+          )
             .background(GeometryReader { geometry in
               Color.clear
                 .preference(key: ScrollOffsetPreferenceKey.self, value: geometry.frame(in: .named("scroll")).origin)
@@ -52,7 +59,6 @@ struct Home: View {
           
           
           // Progress wheel section
-          Text("\(scrollPosition.y)")
           GoalsCompletedOverall()
           
           HabitChallenge()
