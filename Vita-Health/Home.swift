@@ -39,7 +39,37 @@ struct Home: View {
           // Progress wheel section
           GoalsCompletedOverall()
           
-          
+          HStack {
+            VStack (alignment: .leading){
+              HStack {
+                Text("21-Day Habit Challenge")
+                Text("6")
+                Text("/21")
+              }
+              Text("Drink 2L water")
+              HStack {
+                Text("Reveal Today's Surprise 🎁")
+                  .fontWeight(.semibold)
+              }
+              .padding()
+              .background(AppTheme.secondaryGreen)
+              .clipShape(RoundedRectangle(cornerRadius: 20))
+            }
+            Spacer()
+          }
+          .padding()
+          .background(AppTheme.white)
+          .clipShape(RoundedRectangle(cornerRadius: 20))
+          .padding()
+          .overlay(alignment: .trailing) {
+            Image(systemName: "gift")
+              .resizable()
+              .fontWeight(.regular)
+              .foregroundStyle(AppTheme.secondaryGreen)
+              .rotationEffect(.degrees(-30))
+              .frame(width: 100, height: 100)
+              .opacity(0.3)
+          }
         }
         .ignoresSafeArea()
     }
