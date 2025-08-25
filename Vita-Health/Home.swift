@@ -83,7 +83,6 @@ struct Home: View {
           .padding(.horizontal, 20)
           
         }
-      .border(AppTheme.primaryGreen, width: 2)
       }
     }
   }
