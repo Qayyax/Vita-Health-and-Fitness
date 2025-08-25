@@ -10,7 +10,7 @@ import SwiftUI
 struct Home: View {
   var body: some View {
     ZStack {
-      AppTheme.offYellow
+      AppTheme.offWhite
         .ignoresSafeArea()
       VStack(spacing: 0) {
         HStack {

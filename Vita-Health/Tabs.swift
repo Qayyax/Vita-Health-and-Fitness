@@ -52,9 +52,11 @@ struct Tabs: View {
             }
           }
         }
-        .padding(20)
+        .padding(30)
+        .background(AppTheme.white)
         .frame(width: .infinity, height: 50)
-        .cornerRadius(25)
+        .cornerRadius(20)
+        .shadow(radius: 5)
       }
     }
   }
