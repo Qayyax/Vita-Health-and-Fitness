@@ -10,7 +10,6 @@ import SwiftUI
 struct Checkbox: View {
   @State private var isChecked = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
       Toggle("", isOn: $isChecked)
           .toggleStyle(CheckboxToggleStyle())
 
@@ -24,14 +23,13 @@ struct Checkbox: View {
 struct CheckboxToggleStyle: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View {
         HStack {
-            Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
+            Image(systemName: configuration.isOn ? "checkmark.circle.fill" : "circle")
                 .resizable()
-                .frame(width: 24, height: 24)
-                .foregroundColor(configuration.isOn ? .accentColor : .gray)
+                .frame(width: 30, height: 30)
+                .foregroundColor(configuration.isOn ? AppTheme.primaryGreen : AppTheme.gray)
                 .onTapGesture {
                     configuration.isOn.toggle()
                 }
-            configuration.label
         }
     }
 }
