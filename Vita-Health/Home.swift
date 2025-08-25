@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Home: View {
+  @State private var scrollPosition: CGPoint = .zero
   var body: some View {
     ZStack {
       AppTheme.offWhite
@@ -25,7 +26,17 @@ struct Home: View {
             .safeAreaPadding(.top, 50)
 
             // Vstack for into - would hide
-            YouAreDoingGreat()
+            VStack {
+              YouAreDoingGreat()
+              Text("\(scrollPosition.y)")
+            }
+              .background(GeometryReader { geometry in
+                Color.clear
+                  .preference(key: ScrollOffsetPreferenceKey.self, value: geometry.frame(in: .named("scroll")).origin)
+              })
+              .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
+                self.scrollPosition = value
+              }
           }
           .background(AppTheme.secondaryGreen)
           .clipShape(
@@ -53,6 +64,9 @@ struct Home: View {
           AddNewGoals()
           
         }
+        .scrollIndicators(.hidden)
+        .scrollBounceBehavior(.basedOnSize, axes: .vertical)
+        .coordinateSpace(name: "scroll")
         .safeAreaPadding(.bottom, 50)
         .ignoresSafeArea()
     }
@@ -63,3 +77,9 @@ struct Home: View {
   Home()
 }
 
+struct ScrollOffsetPreferenceKey: PreferenceKey {
+    static var defaultValue: CGPoint = .zero
+
+    static func reduce(value: inout CGPoint, nextValue: () -> CGPoint) {
+    }
+}
