@@ -38,11 +38,11 @@ struct StatsProgress: View {
         VStack(alignment: .trailing) {
           ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 8)
-              .frame(width: 100, height: 10)
+              .frame(width: 90, height: 10)
               .foregroundStyle(AppTheme.offBlue)
             
             RoundedRectangle(cornerRadius: 8)
-              .frame(width: completed * 100, height: 10)
+              .frame(width: completed * 90, height: 10)
               .foregroundStyle(primaryColor)
           }
           Text("\(Int(completed * 100))%")
@@ -51,7 +51,7 @@ struct StatsProgress: View {
         }
       }
       .padding()
-      .background(AppTheme.yellow)
+      .background(AppTheme.white)
       .cornerRadius(20)
     }
 }
