@@ -27,8 +27,9 @@ struct Home: View {
 
             // Vstack for into - would hide
             VStack {
-              YouAreDoingGreat()
-              Text("\(scrollPosition.y)")
+              if scrollPosition.y > 0 {
+                YouAreDoingGreat()
+              }
             }
               .background(GeometryReader { geometry in
                 Color.clear
