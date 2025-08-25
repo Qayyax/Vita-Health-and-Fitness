@@ -25,8 +25,8 @@ struct CheckboxToggleStyle: ToggleStyle {
         HStack {
             Image(systemName: configuration.isOn ? "checkmark.circle.fill" : "circle")
                 .resizable()
-                .frame(width: 30, height: 30)
-                .foregroundColor(configuration.isOn ? AppTheme.primaryGreen : AppTheme.gray)
+                .frame(width: 40, height: 40)
+                .foregroundColor(configuration.isOn ? AppTheme.primaryGreen : AppTheme.offWhite)
                 .onTapGesture {
                     configuration.isOn.toggle()
                 }
