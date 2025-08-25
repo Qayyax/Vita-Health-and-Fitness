@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct Home: View {
-  func printMe() {
-    print("Added new Goal")
-  }
   var body: some View {
     ZStack {
       AppTheme.offWhite
@@ -44,22 +41,8 @@ struct Home: View {
           
           HabitChallenge()
           CompleteGoals()
+          AddNewGoals()
           
-          Button(action: printMe) {
-            HStack {
-              Spacer()
-              Image(systemName: "plus")
-              Text("Add New Goal")
-                .bold()
-              Spacer()
-            }
-            .padding()
-            .background(AppTheme.white)
-            .foregroundStyle(AppTheme.primaryGreen)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            .padding(20)
-            .padding(.bottom, 20)
-          }
         }
         .safeAreaPadding(.bottom, 50)
         .ignoresSafeArea()
