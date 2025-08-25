@@ -17,7 +17,7 @@ struct Home: View {
         ScrollView {
           VStack {
             HStack {
-              Text("Good Morning **Gizem!**")
+              Text(scrollPosition.y > 0 ? "Good Morning **Gizem!**" : "**Home**")
                 .font(.title)
               Spacer()
               ProfileCircular()
