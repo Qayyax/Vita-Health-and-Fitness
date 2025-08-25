@@ -57,7 +57,9 @@ struct Tabs: View {
         .frame(width: .infinity, height: 50)
         .cornerRadius(20)
         .shadow(radius: 5)
+        .padding(.bottom)
       }
+      .ignoresSafeArea()
     }
   }
 }
