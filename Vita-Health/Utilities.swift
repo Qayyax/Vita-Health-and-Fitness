@@ -30,3 +30,22 @@ struct AppTheme {
   static let lightBlue = Color.custom("DEEBFF")
   static let white = Color.white
 }
+
+// https://stackoverflow.com/questions/58799474/how-to-disable-scrollview-bounce-in-swiftui#answer-77395789
+extension View {
+  func disableBounces() -> some View {
+    modifier(DisableBouncesModifier())
+  }
+}
+
+struct DisableBouncesModifier: ViewModifier {
+  func body(content: Content) -> some View {
+    content
+      .onAppear {
+        UIScrollView.appearance().bounces = false
+      }
+      .onDisappear {
+        UIScrollView.appearance().bounces = true
+      }
+  }
+}

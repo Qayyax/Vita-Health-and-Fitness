@@ -75,8 +75,8 @@ struct Home: View {
           AddNewGoals()
           
         }
+        .disableBounces()
         .scrollIndicators(.hidden)
-        .scrollBounceBehavior(.basedOnSize, axes: .vertical)
         .coordinateSpace(name: "scroll")
         .safeAreaPadding(.bottom, 50)
         .ignoresSafeArea()
