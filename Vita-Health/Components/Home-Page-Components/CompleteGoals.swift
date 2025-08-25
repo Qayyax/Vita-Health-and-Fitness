@@ -34,6 +34,7 @@ struct CompleteGoals: View {
         
       }
     }
+    .padding()
   }
 }
 

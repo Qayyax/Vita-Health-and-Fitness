@@ -19,17 +19,16 @@ struct StatsProgress: View {
       HStack {
         Image(systemName: icon)
           .padding(10)
-          .font(.system(size: 24))
           .background(in: Circle())
           .foregroundStyle(primaryColor)
           .backgroundStyle(secondaryColor)
         
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 5) {
           Text(goalTitle)
-            .font(.title2)
             .fontWeight(.semibold)
             .foregroundColor(AppTheme.dark)
           Text(goalComment)
+            .font(.system(size: 16))
             .foregroundStyle(AppTheme.gray)
         }
         
@@ -38,15 +37,15 @@ struct StatsProgress: View {
         VStack(alignment: .trailing) {
           ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 8)
-              .frame(width: 90, height: 10)
+              .frame(width: 70, height: 10)
               .foregroundStyle(AppTheme.offBlue)
             
             RoundedRectangle(cornerRadius: 8)
-              .frame(width: completed * 90, height: 10)
+              .frame(width: completed * 70, height: 10)
               .foregroundStyle(primaryColor)
           }
           Text("\(Int(completed * 100))%")
-            .fontWeight(.semibold)
+            .font(.system(size: 13))
             .foregroundStyle(AppTheme.gray)
         }
       }
