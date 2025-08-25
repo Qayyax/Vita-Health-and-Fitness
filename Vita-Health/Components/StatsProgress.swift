@@ -26,11 +26,10 @@ struct StatsProgress: View {
         
         VStack(alignment: .leading) {
           Text(goalTitle)
-            .font(.title)
+            .font(.title2)
             .fontWeight(.semibold)
             .foregroundColor(AppTheme.dark)
           Text(goalComment)
-            .font(.title2)
             .foregroundStyle(AppTheme.gray)
         }
         

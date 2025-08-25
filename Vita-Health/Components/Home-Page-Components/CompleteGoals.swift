@@ -22,20 +22,23 @@ struct CompleteGoals: View {
   var body: some View {
     VStack {
       ForEach(completedGoals, id: \.self.goalTitle) { goal in
-        StatsProgress(icon: goal.icon,
-                      goalTitle: goal.goalTitle,
-                      goalComment: goal.goalComment,
-                      primaryColor: goal.primaryColor,
-                      secondaryColor: goal.secondaryColor,
-                      completed: goal.completed)
+        HStack {
+          Checkbox()
+          StatsProgress(icon: goal.icon,
+                        goalTitle: goal.goalTitle,
+                        goalComment: goal.goalComment,
+                        primaryColor: goal.primaryColor,
+                        secondaryColor: goal.secondaryColor,
+                        completed: goal.completed)
+        }
         
       }
     }
   }
 }
-  
-  #Preview {
-    CompleteGoals()
+
+#Preview {
+  CompleteGoals()
 }
 
 struct CompletedGoalsType {
