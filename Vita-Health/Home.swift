@@ -12,14 +12,6 @@ struct Home: View {
     ZStack {
       AppTheme.offWhite
         .ignoresSafeArea()
-      VStack(spacing: 0) {
-        HStack {
-          Spacer()
-        Text("")
-          .padding(0)
-        }
-        .frame(width: .infinity)
-        .background(AppTheme.secondaryGreen)
 
         ScrollView {
           VStack {
@@ -30,32 +22,10 @@ struct Home: View {
               ProfileCircular()
             }
             .padding(.horizontal)
-            
+            .safeAreaPadding(.top, 50)
+
             // Vstack for into - would hide
-            HStack {
-              Image("morning")
-                .resizable()
-                .frame(width: 125, height: 150)
-              
-              
-              // For the text
-              VStack(alignment: .leading, spacing: 10) {
-                Text("You're doing great today!")
-                  .font(.headline)
-                
-                HStack {
-                  Text("Chat with VitAi")
-                    .fontWeight(.semibold)
-                  Image(systemName: "sparkles")
-                    .foregroundStyle(AppTheme.primaryGreen)
-                }
-                .padding()
-                .background(Color.white)
-                .cornerRadius(20)
-                
-              }
-              Spacer()
-            }
+            YouAreDoingGreat()
           }
           .background(AppTheme.secondaryGreen)
           .clipShape(
@@ -67,23 +37,9 @@ struct Home: View {
           .padding(.bottom, 20)
           
           // Progress wheel section
-          HStack {
-            ProgressWheel(progress: 0.8)
-            Spacer()
-            VStack (alignment: .leading){
-              ForEach(statsOverview, id: \.self.1) { stat in
-                StatsOverview(circleColor: stat.0, title: stat.1, currentValue: stat.2, goalValue: stat.3, unit: stat.4)
-              }
-              
-            }
-          }
-          .padding(20)
-          .background(AppTheme.white)
-          .clipShape(RoundedRectangle(cornerRadius: 30))
-          .padding(.horizontal, 20)
-          
+          GoalsCompletedOverall()
         }
-      }
+        .ignoresSafeArea()
     }
   }
 }
@@ -92,8 +48,3 @@ struct Home: View {
   Home()
 }
 
-let statsOverview: [(Color, String, Int, Int, String?)] = [
-  (AppTheme.secondaryGreen, "Steps", 5000, 10000, ""),
-  (AppTheme.blue, "Water", 2, 2, "L"),
-  (AppTheme.yellow, "Sleep", 7, 7, "h"),
-]
