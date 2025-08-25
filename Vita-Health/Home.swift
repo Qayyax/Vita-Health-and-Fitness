@@ -40,6 +40,7 @@ struct Home: View {
           GoalsCompletedOverall()
           
           HabitChallenge()
+          CompleteGoals()
         }
         .ignoresSafeArea()
     }
