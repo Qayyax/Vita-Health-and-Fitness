@@ -58,6 +58,7 @@ struct Home: View {
             .foregroundStyle(AppTheme.primaryGreen)
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .padding(20)
+            .padding(.bottom, 20)
           }
         }
         .safeAreaPadding(.bottom, 50)
