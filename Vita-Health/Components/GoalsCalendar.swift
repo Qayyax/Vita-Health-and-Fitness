@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct GoalsCalendar: View {
-//  @State private var selectedDate = Date()
   let calendar = Calendar.current
-  let weekDays = ["M", "T", "W", "T", "F", "S", "S"]
+  let weekDays = ["S", "M", "T", "W", "T", "F",  "S"]
   
   @State private var selectedDate: Date? = nil
   
