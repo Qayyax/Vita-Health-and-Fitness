@@ -27,10 +27,10 @@ struct GoalsCalendar: View {
           Text(day)
             .frame(maxWidth: .infinity)
             .font(.headline)
+            .foregroundStyle(AppTheme.primaryGreen)
         }
       }
       
-      // Dates of current week
       HStack {
         ForEach(currentWeekDates, id: \.self) { date in
           let isToday = calendar.isDateInToday(date)
@@ -41,9 +41,9 @@ struct GoalsCalendar: View {
             .padding(8)
             .background(
               RoundedRectangle(cornerRadius: 16)
-                .fill(isSelected ? Color.green : (isToday ? Color.blue : Color.clear))
+                .fill(isSelected ? AppTheme.secondaryGreen : (isToday ? AppTheme.primaryGreen : Color.clear))
             )
-            .foregroundColor(isSelected || isToday ? .white : .primary)
+            .foregroundColor(isSelected || isToday ? AppTheme.white : AppTheme.gray)
             .onTapGesture {
               selectedDate = date
             }
@@ -51,6 +51,10 @@ struct GoalsCalendar: View {
       }
     }
     .padding()
+    .background(
+      RoundedRectangle(cornerRadius: 24)
+        .fill(AppTheme.offBlue)
+    )
   }
 }
 
