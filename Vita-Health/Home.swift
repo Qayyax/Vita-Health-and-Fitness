@@ -40,6 +40,15 @@ struct Home: View {
           GoalsCompletedOverall()
           
           HabitChallenge()
+          
+          VStack (alignment: .leading) {
+            Text("Goals")
+              .font(.title2)
+              .bold()
+            GoalsCalendar()
+          }
+          .padding(.horizontal, 20)
+          
           CompleteGoals()
           AddNewGoals()
           
