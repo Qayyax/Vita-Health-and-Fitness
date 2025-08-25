@@ -43,9 +43,15 @@ struct Home: View {
             VStack (alignment: .leading){
               HStack {
                 Text("21-Day Habit Challenge")
-                Text("6")
-                Text("/21")
+                HStack(spacing: 0) {
+                  Text("6")
+                    .foregroundStyle(AppTheme.primaryGreen)
+                  Text("/21")
+                    .foregroundStyle(AppTheme.gray)
+                }
               }
+              .fontWeight(.bold)
+              .padding(.bottom, 10)
               Text("Drink 2L water")
               HStack {
                 Text("Reveal Today's Surprise 🎁")
