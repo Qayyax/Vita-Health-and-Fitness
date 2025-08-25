@@ -38,6 +38,8 @@ struct Home: View {
           
           // Progress wheel section
           GoalsCompletedOverall()
+          
+          
         }
         .ignoresSafeArea()
     }
