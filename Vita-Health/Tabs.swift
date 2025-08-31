@@ -55,7 +55,7 @@ struct Tabs: View {
         .padding(30)
         .background(AppTheme.white)
         .frame(width: .infinity, height: 50)
-        .cornerRadius(20)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
         .shadow(radius: 5)
         .padding(.bottom)
       }
